@@ -43,4 +43,30 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = nickname;
     }
 
+    public string GetPlayersList()
+    {
+        var list = "";
+        foreach(var player in PhotonNetwork.PlayerList)
+        {
+            list += player.NickName + "\n";
+        }
+        return list;
+    }
+
+    public bool MasterClientRoom()
+    {
+        return PhotonNetwork.IsMasterClient;
+    }
+
+    public void ExitLobby()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
+
+    [PunRPC]
+    public void StartGame(string sceneName)
+    {
+        PhotonNetwork.LoadLevel(sceneName);
+    }
+
 }
