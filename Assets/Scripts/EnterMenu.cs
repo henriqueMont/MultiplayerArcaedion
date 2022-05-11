@@ -18,6 +18,6 @@ public class EnterMenu : MonoBehaviour
     public void JoinRoom()
     {
         NetworkManager.instance.ChangeNick(_playerName.text);
-        NetworkManager.instance.CreateRoom(_roomName.text);
+        NetworkManager.instance.JoinRoom(_roomName.text);
     }
 }

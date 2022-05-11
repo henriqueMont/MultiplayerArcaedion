@@ -17,6 +17,4 @@ public class LobbyMenu : MonoBehaviourPunCallbacks
         _playersList.text = NetworkManager.instance.GetPlayersList();
         _startGame.interactable = NetworkManager.instance.MasterClientRoom();
     }
-
-
 }
